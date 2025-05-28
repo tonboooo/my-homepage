@@ -110,9 +110,24 @@
             <h2>お問い合わせ</h2>
             <div class="contact-container">
                 <p class="contact-message">プロジェクトについてのご相談やお見積りのご依頼など、お気軽にお問い合わせください。</p>
-                <div class="contact-form-placeholder">
-                    <p>お問い合わせフォーム準備中</p>
-                    <p>※ こちらにDifyによる問い合わせフォームが実装されます</p>
+                <div class="contact-form">
+                    <!-- ここからDifyお問い合わせフォーム -->
+                    <div id="dify-contact-form" style="width: 100%; min-height: 400px; border-radius: 8px; overflow: hidden;">
+                        <script>
+                            window.difyChatbotConfig = {
+                                token: 'XpFUbIRMRrEyvX0I',
+                                container: document.getElementById('dify-contact-form'),
+                                welcomeMessage: 'お問い合わせありがとうございます。どのようなご質問がありますか？',
+                                placement: 'inner',
+                                systemVariables: {
+                                    // user_id: 'YOU CAN DEFINE USER ID HERE',
+                                    // conversation_id: 'YOU CAN DEFINE CONVERSATION ID HERE, IT MUST BE A VALID UUID',
+                                },
+                            }
+                        </script>
+                        <script src="https://udify.app/embed.min.js" id="XpFUbIRMRrEyvX0I" defer></script>
+                    </div>
+                    <!-- ここまでDifyお問い合わせフォーム -->
                 </div>
             </div>
         </section>
@@ -142,5 +157,32 @@
     </footer>
 
     <script src="js/main.js"></script>
+
+    <!-- ここからDifyチャットボット開始 -->
+    <!-- Difyチャットボット設定 -->
+    <script>
+        window.difyChatbotConfig = {
+            token: 'XpFUbIRMRrEyvX0I',
+            systemVariables: {
+                // user_id: 'YOU CAN DEFINE USER ID HERE',
+                // conversation_id: 'YOU CAN DEFINE CONVERSATION ID HERE, IT MUST BE A VALID UUID',
+            },
+        }
+    </script>
+    
+    <!-- Difyチャットボットスクリプト読み込み -->
+    <script src="https://udify.app/embed.min.js" id="XpFUbIRMRrEyvX0I" defer></script>
+    
+    <!-- Difyチャットボットスタイル設定 -->
+    <style>
+        #dify-chatbot-bubble-button {
+            background-color: #1C64F2 !important;
+        }
+        #dify-chatbot-bubble-window {
+            width: 24rem !important;
+            height: 40rem !important;
+        }
+    </style>
+    <!-- ここまでDifyチャットボット終了 -->
 </body>
 </html>
